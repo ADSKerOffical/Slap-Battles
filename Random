@@ -1,0 +1,305 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
+
+local Window = OrionLib:MakeWindow({Name = "Budgie Hub | Slap Battles Random Glove", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Reach glove",
+	Default = "",
+	TextDisappear = true,
+	Callback = function(Value)
+		for i,v in pairs(game:GetService'Players'.LocalPlayer.Character:GetChildren()) do
+  if v:isA("Tool") then
+   local a = Instance.new("SelectionBox",v.Handle)
+   v.Handle.Massless = true
+   v.Handle.Transparency = 1
+   a.Adornee = v.Handle
+   v.Handle.Size = Vector3.new(Value, Value, Value)
+   local selectionBox = Instance.new("SelectionBox",v.Handle)
+   selectionBox.Adornee = v.Handle
+   selectionBox.Color3 = Color3.new(0, 0.313725, 0.47451)
+  end
+ end
+	end	  
+})
+
+Tab:AddButton({
+ Name = "Anti Void",
+ Callback = function()
+        local part = Instance.new("Part")
+part.Name = "AntiFallPart"
+part.Size = Vector3.new(50000, 2, 50000)
+part.Transparency = 1
+part.Anchored = true
+part.Position = Vector3.new(137, 294, -161)
+part.Parent = game.Workspace
+   end    
+})
+
+Tab:AddTextbox({
+	Name = "Get Random Glove",
+	Default = "Value",
+	TextDisappear = true,
+	Callback = function(Value)
+		for i = 1, Value do
+		local args = {
+    [1] = "reroll"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("GiveGlove"):FireServer(unpack(args))
+		end
+	end	  
+})
+
+local Tab = Window:MakeTab({
+	Name = "Gloves",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Section = Tab:AddSection({
+	Name = "You need to wear a certain glove to make it work."
+})
+
+Tab:AddDropdown({
+	Name = "Mega Bomb",
+	Default = "1",
+	Options = {"Spawn", "Loop Spawn", "A lot of Spawn"},
+	Callback = function(Value)
+		if Value == "Spawn" then
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Mega Bomb").Event:FireServer(unpack(args))
+end
+if Value == "Loop Spawn" then
+while true do
+  wait()
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Mega Bomb").Event:FireServer(unpack(args))
+  end
+end
+if Value == "A lot of Spawn" then
+ for i = 1, 100 do
+ local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Mega Bomb").Event:FireServer(unpack(args))
+ end
+end
+	end    
+})
+
+Tab:AddDropdown({
+ Name = "Bus",
+ Default = "1",
+ Options = {"Spawn", "Loop Spawn", "A lot of Spawn"},
+ Callback = function(Value)
+  if Value == "Spawn" then
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Bus.Event:FireServer(unpack(args))
+end
+if Value == "Loop Spawn" then
+while true do 
+wait()
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Bus.Event:FireServer(unpack(args))
+end
+end
+if Value == "A lot of Spawn" then
+for i = 1, 30 do
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Bus.Event:FireServer(unpack(args))
+ end
+end
+ end    
+})
+
+Tab:AddDropdown({
+ Name = "Garou",
+ Default = "1",
+ Options = {"Spawn", "Loop Spawn", "A lot of Spawn"},
+ Callback = function(Value)
+  if Value == "Spawn" then
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Garou.Event:FireServer(unpack(args))
+end
+if Value == "Loop Spawn" then
+ while true do
+  wait(0.05)
+  local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Garou.Event:FireServer(unpack(args))
+  end
+end
+if Value == "A lot of Spawn" then
+for i = 1, 70 do
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Garou.Event:FireServer(unpack(args))
+ end
+end
+ end    
+})
+
+Tab:AddDropdown({
+ Name = "Monster",
+ Default = "1",
+ Options = {"Spawn", "Loop Spawn", "A lot of Spawn"},
+ Callback = function(Value)
+  if Value == "Spawn" then
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Monster.Event:FireServer(unpack(args))
+end
+if Value == "Loop Spawn" then
+ while true do
+  wait()
+  local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Monster.Event:FireServer(unpack(args))
+ end
+end
+if Value == "A lot of Spawn" then
+ for i = 1, 100 do
+ local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Monster.Event:FireServer(unpack(args))
+ end
+end
+ end    
+})
+
+Tab:AddDropdown({
+ Name = "Tornado",
+ Default = "1",
+ Options = {"Spawn", "Loop Spawn", "A lot of Spawn"},
+ Callback = function(Value)
+  if Value == "Spawn" then
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Tornado.Event:FireServer(unpack(args))
+end
+if Value == "Loop Spawn" then
+ while true do
+  task.wait()
+  local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Tornado.Event:FireServer(unpack(args))
+ end
+end
+if Value == "A lot of Spawn" then
+ for i = 1, 80 do
+ local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Tornado.Event:FireServer(unpack(args))
+ end
+end
+ end    
+})
+
+Tab:AddDropdown({
+ Name = "General",
+ Default = "1",
+ Options = {"Spawn", "Loop Spawn", "A lot of Spawn"},
+ Callback = function(Value)
+  if Value == "Spawn" then
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.General.Event:FireServer(unpack(args))
+end
+if Value == "Loop Spawn" then
+ while true do
+  wait()
+  local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.General.Event:FireServer(unpack(args))
+ end
+end
+if Value == "A lot of Spawn" then
+ for i = 1, 50 do
+ local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.General.Event:FireServer(unpack(args))
+ end
+end
+ end    
+})
+
+Tab:AddDropdown({
+ Name = "Overseer",
+ Default = "1",
+ Options = {"Spawn", "Loop Spawn", "A lot of Spawn"},
+ Callback = function(Value)
+  if Value == "Spawn" then
+local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Overseer.Event:FireServer(unpack(args))
+end
+if Value == "Loop Spawn" then
+ while true do
+ wait(0.1)
+ local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Overseer.Event:FireServer(unpack(args))
+ end
+end
+if Value == "A lot of Spawn" then
+ for i = 1, 100 do
+  local args = {
+    [1] = "glove"
+}
+
+game:GetService("Players").LocalPlayer.Character.Overseer.Event:FireServer(unpack(args))
+ end
+end
+ end    
+})
